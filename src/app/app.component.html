@@ -1,4 +1,4 @@
-<app-navbar></app-navbar>
-<app-temperature></app-temperature>
-<app-length></app-length>
-<app-speed></app-speed>
+<app-navbar (optionSelected) = "onNavigate($event)"></app-navbar>
+<app-temperature *ngIf="selectedOption === 'temperature'"></app-temperature>
+<app-length *ngIf="selectedOption === 'length'"></app-length>
+<app-speed *ngIf="selectedOption === 'speed'"></app-speed>
