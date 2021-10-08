@@ -6,6 +6,9 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { TemperatureComponent } from './temperature/temperature.component';
 import { SpeedComponent } from './speed/speed.component';
 import { LengthComponent } from './length/length.component';
+import { AppRoutingModule } from './app-routing/app-routing.module';
+import {RouterModule} from "@angular/router";
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -13,10 +16,11 @@ import { LengthComponent } from './length/length.component';
     NavbarComponent,
     TemperatureComponent,
     SpeedComponent,
-    LengthComponent
+    LengthComponent,
+    PageNotFoundComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule, AppRoutingModule, RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]
