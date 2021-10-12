@@ -9,6 +9,7 @@ import { LengthComponent } from './length/length.component';
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import {RouterModule} from "@angular/router";
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -20,7 +21,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     PageNotFoundComponent
   ],
   imports: [
-    BrowserModule, AppRoutingModule, RouterModule
+    BrowserModule, AppRoutingModule, RouterModule, FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

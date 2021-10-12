@@ -2,31 +2,63 @@
   <div class="card-header">
     <ul class="nav nav-pills card-header-pills">
       <li class="nav-item">
-        <a class="nav-link" href="#">Celcius -> Fahrenheit</a>
+        <a class="nav-link" [ngClass]="{'calcSelect': selector === 'celsiusToFahrenheit'}"
+           style="cursor: pointer" (click) = "selector = 'celsiusToFahrenheit'">Celsius -> Fahrenheit</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Fahrenheit -> Celcius</a>
+        <a class="nav-link" [ngClass]="{'calcSelect': selector === 'fahrenheitToCelsius'}"
+           style="cursor: pointer" (click) = "selector = 'fahrenheitToCelsius'">Fahrenheit -> Celsius</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Fahrenheit -> Kelvin</a>
+        <a class="nav-link" [ngClass]="{'calcSelect': selector === 'fahrenheitToKelvin'}"
+           style="cursor: pointer" (click) = "selector = 'fahrenheitToKelvin'">Fahrenheit -> Kelvin</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Kelvin -> Fahrenheit</a>
+        <a class="nav-link" [ngClass]="{'calcSelect': selector === 'kelvinToFahrenheit'}"
+           style="cursor: pointer" (click) = "selector = 'kelvinToFahrenheit'">Kelvin -> Fahrenheit</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Celcius -> Kelvin</a>
+        <a class="nav-link" [ngClass]="{'calcSelect': selector === 'celsiusToKelvin'}"
+           style="cursor: pointer" (click) = "selector = 'celsiusToKelvin'">Celsius -> Kelvin</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Kelvin -> Celcius</a>
+        <a class="nav-link" [ngClass]="{'calcSelect': selector === 'kelvinToCelsius'}"
+           style="cursor: pointer" (click) = "selector = 'kelvinToCelsius'">Kelvin -> Celsius</a>
       </li>
     </ul>
   </div>
-  <div class="card-body">
+  <div  class="card" style="width: 18rem;">
     <h5 class="card-title">Temperature Converter</h5>
-    <p class="card-text">Please Choose what you'd like to convert</p>
-    <!--    User input will go here. -->
-    <!--    I may create a model.-->
-    <!--    Will store the input, and use it in it's respective function in formulas service. Then spit the answer out below-->
-    <a href="#" class="btn btn-primary">Convert</a>
+
+    <div class="row g-3 align-items-center">
+      <div class="col-auto">
+        <label class="col-form-label">Value: </label>
+      </div>
+      <div class="col-auto">
+<!--        This doesn't necessarily need 2 way binding so I will have to change this to a local reference or something?-->
+        <input class="form-control" [(ngModel)]="input">
+      </div>
+      <div class="col-auto">
+    <span class="form-text">
+      Must be a a real number.
+    </span>
+      </div>
+    </div>
+
+    <div class="row g-3 align-items-center">
+      <div class="col-auto">
+        <label class="col-form-label">Result: </label>
+      </div>
+
+      <br><br><br>
+
+      <div class="col-auto">
+<!--        This doesn't necessarily need 2 way binding so I will have to change this to a local reference or something?-->
+        <input class="form-control" [readonly]="true" [(ngModel)]="result">
+      </div>
+    </div>
+
+
+    <a class="btn btn-primary" (click)="convertTemperature()">Convert</a>
   </div>
 </div>
