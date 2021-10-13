@@ -36,7 +36,8 @@
       </div>
       <div class="col-auto">
 <!--        This doesn't necessarily need 2 way binding so I will have to change this to a local reference or something?-->
-        <input class="form-control" [(ngModel)]="input">
+<!--        <input class="form-control" [(ngModel)]="input">-->
+        <input #inputValue class="form-control">
       </div>
       <div class="col-auto">
     <span class="form-text">
@@ -54,11 +55,12 @@
 
       <div class="col-auto">
 <!--        This doesn't necessarily need 2 way binding so I will have to change this to a local reference or something?-->
-        <input class="form-control" [readonly]="true" [(ngModel)]="result">
+<!--        <input class="form-control" [readonly]="true" [(ngModel)]="result">-->
+        <input class="form-control" [readonly]="true" placeholder="{{result}}">
       </div>
     </div>
 
 
-    <a class="btn btn-primary" (click)="convertTemperature()">Convert</a>
+    <a class="btn btn-primary" (click)="convertTemperature(inputValue)">Convert</a>
   </div>
 </div>
