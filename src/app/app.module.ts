@@ -10,6 +10,7 @@ import { AppRoutingModule } from './app-routing/app-routing.module';
 import {RouterModule} from "@angular/router";
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import {FormsModule} from "@angular/forms";
+import { HomePageComponent } from './home-page/home-page.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import {FormsModule} from "@angular/forms";
     TemperatureComponent,
     SpeedComponent,
     LengthComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    HomePageComponent
   ],
   imports: [
     BrowserModule, AppRoutingModule, RouterModule, FormsModule

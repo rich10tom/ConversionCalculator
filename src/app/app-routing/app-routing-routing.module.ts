@@ -4,11 +4,14 @@ import { LengthComponent } from '../length/length.component';
 import { SpeedComponent } from '../speed/speed.component';
 import {TemperatureComponent} from "../temperature/temperature.component";
 import {PageNotFoundComponent} from "../page-not-found/page-not-found.component";
+import {HomePageComponent} from "../home-page/home-page.component";
+
 
 const routes: Routes = [
   {path: 'length', component: LengthComponent},
   {path: 'speed', component: SpeedComponent},
   {path: 'temperature', component: TemperatureComponent},
+  {path: '', component: HomePageComponent},
   {path: '**', component: PageNotFoundComponent}
 
 ];

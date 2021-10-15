@@ -12,8 +12,8 @@ export class TemperatureComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
+
 
   convertTemperature(inputValue: HTMLInputElement) {
 
@@ -38,7 +38,7 @@ export class TemperatureComponent implements OnInit {
         break;
 
       default:
-        alert('Invalid Selection')
+        alert('Invalid Selection');
         break;
     }
   }
