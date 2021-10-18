@@ -1,1 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+  background-image: url("https://undark.org/wp-content/uploads/2020/01/GettyImages-154932300.jpg");
+  background-repeat: repeat;
+  background-attachment: fixed;
+  background-size: contain;
+}

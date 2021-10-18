@@ -2,3 +2,11 @@
   background-color: #0d6efd;
   color: white;
 }
+.positioning {
+  position: absolute;
+  transform: translate(100%, 100%);
+}
+
+.pointer {
+  cursor: pointer;
+}
