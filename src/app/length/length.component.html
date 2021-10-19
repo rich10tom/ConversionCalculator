@@ -3,31 +3,61 @@
   <div class="card-header">
     <ul class="nav nav-pills card-header-pills">
       <li class="nav-item">
-        <a class="nav-link" href="#">Inches -> Centimeters</a>
+        <a class="nav-link" [ngClass]="{'calcSelect': selector === 'INCM'}"
+           style="cursor: pointer" (click) = "selector = 'INCM'">Inches -> Centimeters</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Miles -> Kilometers</a>
+        <a class="nav-link" [ngClass]="{'calcSelect': selector === 'MKM'}"
+           style="cursor: pointer" (click) = "selector = 'MKM'">Miles -> Kilometers</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Millimeters -> Picometers</a>
+        <a class="nav-link" [ngClass]="{'calcSelect': selector === 'MMPM'}"
+           style="cursor: pointer" (click) = "selector = 'MMPM'">Millimeters -> Picometers</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Feet -> Miles</a>
+        <a class="nav-link" [ngClass]="{'calcSelect': selector === 'FTM'}"
+           style="cursor: pointer" (click) = "selector = 'FTM'">Feet -> Miles</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Yards -> feet</a>
+        <a class="nav-link" [ngClass]="{'calcSelect': selector === 'YFT'}"
+           style="cursor: pointer" (click) = "selector = 'YFT'">Yards -> feet</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Meters -> Yards</a>
+        <a class="nav-link" [ngClass]="{'calcSelect': selector === 'MY'}"
+           style="cursor: pointer" (click) = "selector = 'MY'">Meters -> Yards</a>
       </li>
     </ul>
   </div>
-  <div class="card-body">
+</div>
+<div class="positioning">
+  <div  class="card">
     <h5 class="card-title">Length Converter</h5>
-    <p class="card-text">Please Choose what you'd like to convert</p>
-<!--    User input will go here. -->
-<!--    I may create a model.-->
-<!--    Will store the input, and use it in it's respective function in formulas service. Then spit the answer out below-->
-    <a href="#" class="btn btn-primary">Convert</a>
+
+    <div class="row g-4 align-items-center">
+      <div class="col-auto">
+        <label class="col-form-label">Value: </label>
+      </div>
+      <div class="col-auto">
+        <input #inputValue class="form-control">
+      </div>
+      <div class="col-auto">
+      <span class="form-text">
+        Must be a a real number.
+      </span>
+      </div>
+    </div>
+
+    <div class="row g-3 align-items-center">
+      <div class="col-auto">
+        <label class="col-form-label">Result: </label>
+      </div>
+
+      <br><br><br>
+
+      <div class="col-auto">
+        <input class="form-control" [readonly]="true" placeholder="{{result}}">
+      </div>
+    </div>
+    <a class="btn btn-primary" (click)="convertLength(inputValue)">Convert</a>
   </div>
 </div>

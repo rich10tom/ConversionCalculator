@@ -5,6 +5,7 @@
 .positioning {
   position: absolute;
   transform: translate(100%, 100%);
+  margin: 0 auto;
 }
 
 .pointer {

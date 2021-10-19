@@ -3,28 +3,61 @@
   <div class="card-header">
     <ul class="nav nav-pills card-header-pills">
       <li class="nav-item">
-        <a class="nav-link" href="#">MPH -> KM/H</a>
+        <a class="nav-link" [ngClass]="{'calcSelect': selector === 'MPHKMH'}"
+           style="cursor: pointer" (click) = "selector = 'MPHKMH'">MPH -> KM/H</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">KM/H -> MPH</a>
+        <a class="nav-link" [ngClass]="{'calcSelect': selector === 'KMHMPH'}"
+           style="cursor: pointer" (click) = "selector = 'KMHMPH'">KM/H -> MPH</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Meters/s -> MPH</a>
+        <a class="nav-link" [ngClass]="{'calcSelect': selector === 'MMPH'}"
+           style="cursor: pointer" (click) = "selector = 'MMPH'">Meters/s -> MPH</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Feet/s -> Meters/s</a>
+        <a class="nav-link" [ngClass]="{'calcSelect': selector === 'FTM'}"
+           style="cursor: pointer" (click) = "selector = 'FTM'">Feet/s -> Meters/s</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Meters/h -> Feet/s</a>
+        <a class="nav-link" [ngClass]="{'calcSelect': selector === 'MFT'}"
+           style="cursor: pointer" (click) = "selector = 'MFT'">Meters/h -> Feet/s</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">MPH -> knots</a>
+        <a class="nav-link" [ngClass]="{'calcSelect': selector === 'MPHK'}"
+           style="cursor: pointer" (click) = "selector = 'MPHK'">MPH -> knots</a>
       </li>
     </ul>
   </div>
-  <div class="card-body">
-    <h5 class="card-title">Speed Converter</h5>
-    <p class="card-text">Please Choose what you'd like to convert</p>
-    <a href="#" class="btn btn-primary">Convert</a>
-  </div>
 </div>
+ <div class="positioning">
+        <div  class="card">
+          <h5 class="card-title">Speed Converter</h5>
+
+          <div class="row g-4 align-items-center">
+            <div class="col-auto">
+              <label class="col-form-label">Value: </label>
+            </div>
+            <div class="col-auto">
+              <input #inputValue class="form-control">
+            </div>
+            <div class="col-auto">
+      <span class="form-text">
+        Must be a a real number.
+      </span>
+            </div>
+          </div>
+
+          <div class="row g-3 align-items-center">
+            <div class="col-auto">
+              <label class="col-form-label">Result: </label>
+            </div>
+
+            <br><br><br>
+
+            <div class="col-auto">
+              <input class="form-control" [readonly]="true" placeholder="{{result}}">
+            </div>
+          </div>
+          <a class="btn btn-primary" (click)="convertSpeed(inputValue)">Convert</a>
+        </div>
+  </div>

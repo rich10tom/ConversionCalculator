@@ -1,0 +1,13 @@
+.calcSelect{
+  background-color: #0d6efd;
+  color: white;
+}
+.positioning {
+  position: absolute;
+  transform: translate(100%, 100%);
+  margin: 0 auto;
+}
+
+.pointer {
+  cursor: pointer;
+}
